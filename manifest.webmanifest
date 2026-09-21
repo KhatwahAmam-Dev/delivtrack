@@ -1,0 +1,37 @@
+{
+  "name": "DelivTrack — Pemantauan Pengantaran",
+  "short_name": "DelivTrack",
+  "description": "Aplikasi pengantaran dua arah: laporan ke pelanggan dan ke manajemen. Mencatat waktu, jarak tempuh GPS, dokumentasi foto, tanda tangan digital, dan arsip PDF otomatis.",
+  "id": "/?app=delivtrack",
+  "start_url": "./index.html?source=pwa",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "portrait",
+  "background_color": "#f6f7fb",
+  "theme_color": "#4f46e5",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "navigation"],
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "icons/favicon.png", "sizes": "64x64", "type": "image/png" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mulai Pengantaran Baru",
+      "short_name": "Antar Baru",
+      "url": "./index.html?action=new",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Riwayat & Ekspor",
+      "short_name": "Riwayat",
+      "url": "./index.html?action=history",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}

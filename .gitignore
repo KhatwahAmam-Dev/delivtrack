@@ -1,0 +1,17 @@
+# --- Sistem operasi ---
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+
+# --- Berkas sementara ---
+*.log
+*.tmp
+
+# Catatan: folder vendor/ SENGAJA tidak diabaikan.
+# DelivTrack adalah PWA tanpa build step, sehingga leaflet, jspdf,
+# xlsx, dan zxing dimuat langsung oleh browser dari folder ini.

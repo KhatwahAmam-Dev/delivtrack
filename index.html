@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="auto">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+<title>DelivTrack — Pemantauan Pengantaran</title>
+<meta name="description" content="Aplikasi pemantauan pengantaran: titik awal, jarak tempuh, dokumentasi foto, tanda tangan digital, laporan PDF, dan ekspor Excel." />
+<meta name="theme-color" content="#4f46e5" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light dark" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="DelivTrack" />
+<meta name="format-detection" content="telephone=no" />
+
+<link rel="manifest" href="./manifest.webmanifest" />
+<link rel="icon" href="./icons/favicon.png" sizes="any" />
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+<link rel="stylesheet" href="./css/app.css" />
+</head>
+<body>
+
+<div class="app" id="app">
+  <header class="topbar" id="topbar">
+    <div class="topbar__row">
+      <button class="topbar__icon" type="button" id="btnBack" hidden aria-label="Kembali"></button>
+      <div class="topbar__title" id="brandTitle">
+        <div class="brandmark" aria-hidden="true">DT</div>
+        <div class="topbar__text">
+          <strong>DelivTrack</strong>
+          <span>Pemantauan Pengantaran</span>
+        </div>
+      </div>
+      <div class="topbar__text" id="pageTitle" hidden>
+        <strong id="topbarTitle">DelivTrack</strong>
+        <span id="topbarSub">Pemantauan Pengantaran</span>
+      </div>
+      <div class="topbar__actions" id="topbarActions"></div>
+    </div>
+  </header>
+
+  <div class="netbar" id="netbar" hidden>
+    <span class="dotlive dotlive--warn" aria-hidden="true"></span>
+    <span id="netbarText">Mode offline — data disimpan di HP dan diunggah otomatis saat internet kembali.</span>
+  </div>
+
+  <main class="screen" id="view" role="main">
+    <div class="empty">
+      <div class="busy" style="position:static;background:none;backdrop-filter:none">
+        <span class="spinner" aria-hidden="true"></span>
+      </div>
+      <p>Menyiapkan aplikasi…</p>
+    </div>
+  </main>
+
+  <nav class="tabbar" id="tabbar" aria-label="Navigasi utama">
+    <button class="tabbar__btn" type="button" data-tab="home" aria-selected="true"></button>
+    <button class="tabbar__btn" type="button" data-tab="history" aria-selected="false"></button>
+    <button class="tabbar__btn" type="button" data-tab="settings" aria-selected="false"></button>
+  </nav>
+</div>
+
+<noscript>
+  <div class="noscript">DelivTrack memerlukan JavaScript aktif untuk merekam perjalanan, foto, dan tanda tangan.</div>
+</noscript>
+
+<script src="./vendor/leaflet.js" defer></script>
+<script type="module" src="./js/app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js', { scope: './' }).catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>
