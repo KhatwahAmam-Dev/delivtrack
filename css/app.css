@@ -775,10 +775,14 @@ main.screen--notab { padding-bottom: calc(var(--safe-b) + 26px); }
 .row__end { flex: none; color: var(--text-3); display: flex; align-items: center; gap: 8px; }
 .row__end svg { width: 18px; height: 18px; }
 
-.kv { display: flex; justify-content: space-between; gap: 14px; padding: 9px 0; font-size: 13.5px; }
+/* Pasangan kunci–nilai ditulis berurutan sebagai anak rata (k,v,k,v,…).
+   Grid dua kolom membentuk satu baris per pasangan; flex satu baris akan
+   menjepit semua pasangan jadi kolom sempit dan memotong nilai per huruf. */
+.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); column-gap: 14px; font-size: 13.5px; }
+.kv > :nth-child(n + 3) { border-top: 1px dashed var(--border); }
 .kv + .kv { border-top: 1px dashed var(--border); }
-.kv__k { color: var(--text-3); flex: none; }
-.kv__v { font-weight: 650; text-align: right; word-break: break-word; font-variant-numeric: tabular-nums; }
+.kv__k { color: var(--text-3); padding: 9px 0; }
+.kv__v { font-weight: 650; text-align: right; word-break: break-word; font-variant-numeric: tabular-nums; min-width: 0; padding: 9px 0; }
 
 /* ---------- Thumb grid ---------- */
 .thumbs {

@@ -2,7 +2,7 @@
 // Tugas: (1) menyajikan aplikasi walau tanpa internet, (2) menyimpan tile peta
 // yang pernah dilihat, (3) menerima Background Sync untuk memicu unggahan Google Drive.
 
-const VERSION = 'v1.0.4';
+const VERSION = 'v1.0.5';
 const SHELL_CACHE = `delivtrack-shell-${VERSION}`;
 const TILE_CACHE = `delivtrack-tile-${VERSION}`;
 const RUNTIME_CACHE = `delivtrack-runtime-${VERSION}`;

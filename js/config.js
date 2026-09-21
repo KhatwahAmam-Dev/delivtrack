@@ -1,7 +1,7 @@
 export const APP = {
   name: 'DelivTrack',
   tagline: 'Pemantauan Pengantaran',
-  version: '1.0.4',
+  version: '1.0.5',
   schema: 1,
 };
 
